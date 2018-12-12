@@ -1,11 +1,12 @@
 const fs = require("fs")
+const uuidv3 = require('uuid/v3');
 const essays = require("./essays.json")
 const data = essays.map(essay => transform(essay));
 
 function transform(essay) {
   const newEssay = [
-    essay.id,
-    essay.paragraphs.join(" "),
+    uuidv3('http://essaydatabase.org/essays', uuidv3.URL),
+    essay.paragraphs.join("\n\n"),
     essay.prompt,
     essay.college,
     essay.yearApplied,
@@ -24,6 +25,8 @@ function transform(essay) {
   return newEssay;
 }
 
-fs.writeFile('db.json', JSON.stringify({ essays: data }), (err) => {
+fs.writeFile('db.json', JSON.stringify({
+  essays: data
+}), (err) => {
   if (err) throw err;
 });
