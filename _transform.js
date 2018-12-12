@@ -13,7 +13,7 @@ function transform(essay) {
     essay.applicationStatus,
     essay.author,
     "",
-    essay.country,
+    "United States",
     essay.state,
     essay.featured,
     parseInt(essay.smallImageURL.split("=")[1], 10),
