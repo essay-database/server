@@ -1,6 +1,6 @@
-const fs = require("fs")
-const uuidv1 = require('uuid/v1');
-const essays = require("./essays.json")
+const fs = require("fs");
+const uuidv1 = require("uuid/v1");
+const essays = require("./essays.json");
 const data = essays.map(essay => transform(essay));
 
 function transform(essay) {
@@ -20,13 +20,17 @@ function transform(essay) {
     date: essay.dateUploaded,
     source: "",
     comments: "",
-    views: 0,
-  }
+    views: 0
+  };
   return newEssay;
 }
 
-fs.writeFile('db.json', JSON.stringify({
-  essays: data
-}), (err) => {
-  if (err) throw err;
-});
+fs.writeFile(
+  "db.json",
+  JSON.stringify({
+    essays: data
+  }),
+  err => {
+    if (err) throw err;
+  }
+);
