@@ -1,11 +1,11 @@
 const fs = require("fs")
-const uuidv3 = require('uuid/v3');
+const uuidv1 = require('uuid/v1');
 const essays = require("./essays.json")
 const data = essays.map(essay => transform(essay));
 
 function transform(essay) {
   const newEssay = {
-    id: uuidv3('http://essaydatabase.org/essays', uuidv3.URL),
+    id: uuidv1(),
     essay: essay.paragraphs.join("\n\n"),
     prompt: essay.prompt,
     college: essay.college,
