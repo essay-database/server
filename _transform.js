@@ -1,6 +1,6 @@
 const fs = require("fs");
 const uuidv1 = require("uuid/v1");
-const essays = require("./essays.json");
+const essays = require("./_essays.json");
 const data = essays.map(essay => transform(essay));
 
 function transform(essay) {

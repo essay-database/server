@@ -4,7 +4,7 @@
   "description": "essaydb server",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 8080 --middlewares headers.js backup.js"
+    "start": "json-server index.js"
   },
   "dependencies": {
     "json-server": "^0.14.0",
