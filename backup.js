@@ -2,6 +2,12 @@ const fs = require("fs");
 const path = require("path");
 const dir = "backups";
 
+function checkDir(dir) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+}
+
 module.exports = (req, res, next) => {
   checkDir(dir);
   const src = "db.json";
@@ -12,9 +18,3 @@ module.exports = (req, res, next) => {
   });
   next();
 };
-
-function checkDir(dir) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-}

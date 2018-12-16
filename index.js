@@ -6,6 +6,4 @@ const backup = require("./backup");
 const headers = require("./headers");
 
 server.use(middlewares, backup, headers, router);
-server.listen(8080, () => {
-  console.log("API server is running");
-});
+server.listen();

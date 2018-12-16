@@ -5,7 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vscode
-backups/
+backups
+dist
 
 # Runtime data
 pids
